@@ -51,27 +51,13 @@ namespace MatrixTable
         "3c",
         "4d",
         "5e",
-        "6f",
-        "7g",
-        "8h",
-        "9i",
-        "10j"};
+        "6f"};
             this.ucMatrixTable1.Location = new System.Drawing.Point(134, 71);
             this.ucMatrixTable1.Margin = new System.Windows.Forms.Padding(0);
             this.ucMatrixTable1.Name = "ucMatrixTable1";
             this.ucMatrixTable1.NoCols = 10;
             this.ucMatrixTable1.NoRows = 10;
-            this.ucMatrixTable1.RowNames = new string[] {
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10"};
+            this.ucMatrixTable1.RowNames = new string[0];
             this.ucMatrixTable1.Size = new System.Drawing.Size(1026, 566);
             this.ucMatrixTable1.TabIndex = 2;
             // 
