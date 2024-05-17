@@ -259,7 +259,8 @@ namespace MatrixTable
                         Row = 0
                     };
                     cell.Location = new Point(cell.Width * i, 0);
-                    cell.Text = (this.ColumnNames != null && i <= this.ColumnNames.Length) ? this.ColumnNames[i - 1] : i.ToString();//(this.ColumnNames != null && i <= this.ColumnNames.Length) ? this.ColumnNames[i - 1] :
+                    cell.Text = (this.ColumnNames != null && i <= this.ColumnNames.Length && !string.IsNullOrEmpty(this.ColumnNames[i - 1])) ?
+                        this.ColumnNames[i - 1] : i.ToString();//(this.ColumnNames != null && i <= this.ColumnNames.Length) ? this.ColumnNames[i - 1] :
                     //cell.Text = ((char)(i + 64)).ToString();
 
                     cell.BackGroundColor = Color.FromArgb(50, Color.Black);
@@ -284,7 +285,8 @@ namespace MatrixTable
                         Col = 0
                     };
                     cell.Location = new Point(0, cell.Height * i);
-                    cell.Text = (this.RowNames != null && i <= this.RowNames.Length) ? this.RowNames[i - 1] : i.ToString();// (this.RowNames != null && i <= this.RowNames.Length) ? this.RowNames[i - 1] :
+                    cell.Text = (this.RowNames != null && i <= this.RowNames.Length && !string.IsNullOrEmpty(this.RowNames[i - 1])) ?
+                        this.RowNames[i - 1] : i.ToString();// (this.RowNames != null && i <= this.RowNames.Length) ? this.RowNames[i - 1] :
 
                     cell.BackGroundColor = Color.FromArgb(50, Color.Black);
                     cell.label.MouseMove -= cell.MouseMoveAction;
