@@ -8,7 +8,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <!-- <icon>icon.png</icon> -->
-    <projectUrl>https://github.com/nguyenhien0201/MatrixTable</projectUrl>
+    <projectUrl>https://github.com</projectUrl>
     <description>$description$</description>
     <releaseNotes>Init MatrixTable</releaseNotes>
     <copyright>$copyright$</copyright>

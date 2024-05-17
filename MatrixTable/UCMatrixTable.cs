@@ -70,8 +70,8 @@ namespace MatrixTable
     {
         public int NoRows { get; set; } = 10;
         public int NoCols { get; set; } = 10;
-        public string[] ColumnNames { get; set; }
-        public string[] RowNames { get; set; }
+        public string[] ColumnNames { get; set; } = new string[10];
+        public string[] RowNames { get; set; } = new string[10];
 
         //sau nen doi sang dung dictionnary va truy cap kieu [i,j]
         public Cell[,] Cells = new Cell[15, 15];
@@ -259,7 +259,7 @@ namespace MatrixTable
                         Row = 0
                     };
                     cell.Location = new Point(cell.Width * i, 0);
-                    cell.Text = i < this.ColumnNames.Length ? this.ColumnNames[i - 1] : i.ToString();
+                    cell.Text = (this.ColumnNames != null && i <= this.ColumnNames.Length) ? this.ColumnNames[i - 1] : i.ToString();//(this.ColumnNames != null && i <= this.ColumnNames.Length) ? this.ColumnNames[i - 1] :
                     //cell.Text = ((char)(i + 64)).ToString();
 
                     cell.BackGroundColor = Color.FromArgb(50, Color.Black);
@@ -284,7 +284,7 @@ namespace MatrixTable
                         Col = 0
                     };
                     cell.Location = new Point(0, cell.Height * i);
-                    cell.Text = i < this.RowNames.Length ? this.RowNames[i - 1] : i.ToString();
+                    cell.Text = (this.RowNames != null && i <= this.RowNames.Length) ? this.RowNames[i - 1] : i.ToString();// (this.RowNames != null && i <= this.RowNames.Length) ? this.RowNames[i - 1] :
 
                     cell.BackGroundColor = Color.FromArgb(50, Color.Black);
                     cell.label.MouseMove -= cell.MouseMoveAction;
@@ -421,27 +421,23 @@ namespace MatrixTable
         public UCMatrixTable()
         {
             InitializeComponent();
-            this.RowNames = new string[NoRows];
-            this.ColumnNames = new string[NoCols];
-            //if (this.RowNames.Length > NoRows)
-            {
-                for (int i = 1; i <= NoRows; i++)
-                {
-                    this.RowNames[i - 1] = i.ToString();
-                }
-            }
-            //if (this.ColumnNames.Length > NoCols)
-            {
-                for (int j = 1; j <= NoCols; j++)
-                {
-                    this.ColumnNames[j - 1] = j.ToString();
-                }
-            }
+            //this.RowNames = new string[NoRows];
+            //this.ColumnNames = new string[NoCols];
+            ////if (this.RowNames.Length > NoRows)
+            //{
+            //    for (int i = 1; i <= NoRows; i++)
+            //    {
+            //        this.RowNames[i - 1] = i.ToString();
+            //    }
+            //}
+            ////if (this.ColumnNames.Length > NoCols)
+            //{
+            //    for (int j = 1; j <= NoCols; j++)
+            //    {
+            //        this.ColumnNames[j - 1] = j.ToString();
+            //    }
+            //}
 
-        }
-        ~UCMatrixTable()
-        {
-            this.Dispose(false);
         }
         private void MatrixTable_KeyPress(object sender, KeyPressEventArgs e)
         {
