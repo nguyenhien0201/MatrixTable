@@ -44,7 +44,6 @@
     <Compile Include="Cell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Helper\Class1.cs" />
     <Compile Include="IMatrixTableObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UCMatrixTable.cs">
